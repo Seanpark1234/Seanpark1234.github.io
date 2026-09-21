@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sean Park's finance portfolio">
+  <title>Sean Park | Finance Portfolio</title>
+
+  <style>
+    :root {
+      --navy: #101828;
+      --blue: #2563eb;
+      --light-blue: #dbeafe;
+      --background: #f5f7fb;
+      --white: #ffffff;
+      --text: #344054;
+      --border: #e4e7ec;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 1.15rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 580px;
+      display: grid;
+      place-items: center;
+      padding: 80px 0;
+      text-align: center;
+      background:
+        radial-gradient(circle at 10% 20%, var(--light-blue), transparent 28%),
+        radial-gradient(circle at 90% 75%, #e0e7ff, transparent 26%),
+        var(--background);
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 14px 0 18px;
+      color: var(--navy);
+      font-size: clamp(2.8rem, 7vw, 5.3rem);
+      line-height: 1.05;
+    }
+
+    .statement {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.2rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      color: var(--white);
+      background: var(--blue);
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: var(--background);
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      margin: 5px 0 10px;
+      color: var(--navy);
+      font-size: 2.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+    }
+
+    .skill {
+      padding: 18px;
+      color: var(--navy);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      padding: 28px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(16, 24, 40, 0.09);
+    }
+
+    .project-number {
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    h3 {
+      margin: 12px 0 8px;
+      color: var(--navy);
+      font-size: 1.4rem;
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 30px 0;
+      color: #d0d5dd;
+      background: var(--navy);
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">SEAN PARK</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <div class="hero-content container">
+        <span class="eyebrow">Welcome to my portfolio</span>
+
+        <h1>Hi, I'm<br>Sean Park.</h1>
+
+        <p class="statement">
+          I am a finance student at Rutgers University–New Brunswick,
+          graduating in May 2028, with a strong interest in applying
+          financial analysis, business strategy, and data-driven thinking
+          to real-world decisions.
+        </p>
+
+        <a class="button" href="#projects">View My Projects</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">About me</span>
+          <h2>Always learning. Always building.</h2>
+
+          <p>
+            I am a Rutgers Business School finance student with a 3.718 GPA
+            and Dean's List honors. My experience in customer service,
+            safety, team leadership, and international study has strengthened
+            my ability to communicate clearly, stay composed under pressure,
+            and contribute reliably to a team.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What I bring</span>
+          <h2>Skills</h2>
+          <p>
+            These are some of the business and professional skills I bring
+            to a team.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill">Financial Accounting</div>
+          <div class="skill">Business Statistics</div>
+          <div class="skill">Computer Applications</div>
+          <div class="skill">Operations Research</div>
+          <div class="skill">Customer Survey Analysis</div>
+          <div class="skill">Marketing Fundamentals</div>
+          <div class="skill">Supply Chain Management</div>
+          <div class="skill">Toast POS</div>
+          <div class="skill">Team Leadership</div>
+          <div class="skill">Cross-Cultural Communication</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Selected work</span>
+          <h2>Projects</h2>
+          <p>
+            Projects that demonstrate my business knowledge, research,
+            teamwork, and technical abilities.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-number">PROJECT 01</span>
+
+            <h3>Personal Portfolio Website</h3>
+
+            <p>
+              A responsive website created with HTML and CSS to present my
+              academic background, business skills, professional experience,
+              and selected work.
+            </p>
+
+            <a class="project-link" href="#home">View current site →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">PROJECT 02</span>
+
+            <h3>Hospitality Operations Research</h3>
+
+            <p>
+              Collaborated with two DECA teammates to survey 100 customers
+              for Leone's Trattoria, analyze operational and budget
+              considerations, and recommend Toast POS to improve service,
+              sales, and profitability. Presented the findings in a
+              15-minute competitive presentation and earned fourth place
+              statewide.
+            </p>
+
+            <span class="project-link">
+              DECA New Jersey · 2023 · Fourth Place
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Sean Park · Built with HTML and CSS</p>
+    </div>
+  </footer>
+</body>
+</html>
